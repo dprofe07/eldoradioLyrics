@@ -2,7 +2,6 @@ import flask
 from flask import render_template
 
 from eldoradioParser import eldoradio
-import searchParser
 
 app = flask.Flask(__name__)
 
@@ -14,4 +13,4 @@ def page_index():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 8000)
+    app.run('127.0.0.1', 8007)

@@ -1,0 +1,16 @@
+body, html {
+    width: 100%;
+}
+
+.radio-title {
+    text-align: center;
+}
+
+.song-text {
+    display: flex;
+}
+
+.song-text span {
+    margin-left: auto;
+    margin-right: auto;
+}

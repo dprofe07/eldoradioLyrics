@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Эльдо радио - информация</title>
+        <link rel="stylesheet" href="/static/style.css"/>
+    </head>
+
+    <body>
+        <h1 class="radio-title">Радиостанция: Эльдо радио</h1>
+        <p>Песня: {{ song.name }} — {{ song.artist }}</p>
+        <p>Длительность: {{ song.formattedDuration() }}</p>
+
+        <p>Текст взят с сайта <a href="{{ song.lyrics_url }}">{{ song.lyrics_url }}</a></p>
+
+        <div class="song-text">
+            <span>{{ (song.lyrics or "Not found").replace('\n', '<br/>') | safe }}</span>
+        </div>
+    </body>
+</html>

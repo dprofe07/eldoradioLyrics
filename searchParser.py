@@ -7,8 +7,14 @@ def find_on_azlyrics(text):
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
                       ' (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
     }
+
+    first_req = requests.get('https://www.azlyrics.com/geo.js', headers=headers)
+
+    x = first_req.text.split('\n')[7][30:-3]
+
+    print(x)
     print(f'searching for: {text}')
-    req = requests.get('https://search.azlyrics.com/search.php', {'q': text, 'x': '8e0e73ed62d9cc93621bc592a5a98e0dc2cdb94f22b9bbcc1d051bf1c7e6dd85'}, headers=headers)
+    req = requests.get('https://search.azlyrics.com/search.php', {'q': text, 'x': x}, headers=headers)
     print(req.url)
     bs = BeautifulSoup(req.text, 'lxml')
 

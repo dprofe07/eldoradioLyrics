@@ -8,7 +8,7 @@ def find_on_azlyrics(text):
                       ' (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'
     }
     print(f'searching for: {text}')
-    req = requests.get('https://search.azlyrics.com/search.php', {'q': text, 'x': '8e0e73ed62d9cc93621bc592a5a98e0dc2cdb94f22b9bbcc1d051bf1c7e6dd85'}, headers=headers)
+    req = requests.get('https://search.azlyrics.com/search.php', {'q': text, 'x': 'a67cc86f216a9ed2032a6caff6eee9e8c25714fc4e22ae4fd92fdf153cc9921b'}, headers=headers)
     print(req.url)
     bs = BeautifulSoup(req.text, 'lxml')
 

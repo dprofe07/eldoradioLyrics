@@ -7,7 +7,7 @@ from song import Song
 
 class EldoRadio:
     def __init__(self):
-        self.client = socketio.Client()
+        self.client = socketio.Client(logger=True, engineio_logger=True)
         self.client.connect('https://mplb.emg.fm/', namespaces=['/eldo'])
         self._song = None
 
